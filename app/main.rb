@@ -2,7 +2,7 @@ require 'app/lowrez.rb'
 
 def tick args
   # How to set the background color
-  args.lowrez.background_color = [255, 255, 255]
+  args.lowrez.background_color = [64, 64, 64]
 
   # ==== HELLO WORLD ======================================================
   # Steps to get started:
@@ -18,7 +18,7 @@ def tick args
   # - Remove the "#" infront of lines to comment out code
 
   # Invoke the hello_world subroutine/method
-  hello_world args # <---- add a "#" to the beginning of the line to stop running this subroutine/method.
+  # hello_world args # <---- add a "#" to the beginning of the line to stop running this subroutine/method.
   # =======================================================================
 
 
@@ -58,7 +58,7 @@ def tick args
 
   # ==== HOW TO MOVE A SPRITE BASED OFF OF USER INPUT =====================
   # Remove the "#" at the beginning of the line below
-  # how_to_move_a_sprite args
+  how_to_move_a_sprite args
   # =======================================================================
 
 
