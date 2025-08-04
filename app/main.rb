@@ -28,7 +28,7 @@ def tick args
   #       Scroll down to the method to see the details.
 
   # Remove the "#" at the beginning of the line below
-  # how_to_render_a_label args # <---- remove the "#" at the begging of this line to run the method
+  how_to_render_a_label args # <---- remove the "#" at the begging of this line to run the method
   # =======================================================================
 
 
@@ -58,7 +58,7 @@ def tick args
 
   # ==== HOW TO MOVE A SPRITE BASED OFF OF USER INPUT =====================
   # Remove the "#" at the beginning of the line below
-  how_to_move_a_sprite args
+  # how_to_move_a_sprite args
   # =======================================================================
 
 
@@ -87,7 +87,7 @@ def tick args
 
 
   # ==== The line below renders a debug grid, mouse information, and current tick
-  render_debug args
+  # render_debug args
 end
 
 def hello_world args
@@ -125,25 +125,25 @@ def how_to_render_a_label args
   # NOTE: Text is aligned from the TOP LEFT corner
 
   # Render an EXTRA LARGE/XL label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 57, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 57, text: "Hellorld",
                          size_enum: LOWREZ_FONT_XL,
                          r: 0, g: 0, b: 0, a: 255,
                          font: LOWREZ_FONT_PATH }
 
   # Render a LARGE/LG label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 36, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 36, text: "Hellorld",
                           size_enum: LOWREZ_FONT_LG,
                           r: 0, g: 0, b: 0, a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # Render a MEDIUM/MD label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 20, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 20, text: "Hellorld",
                           size_enum: LOWREZ_FONT_MD,
                           r: 0, g: 0, b: 0, a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # Render a SMALL/SM label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 9, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 9, text: "Hellorld",
                           size_enum: LOWREZ_FONT_SM,
                           r: 0, g: 0, b: 0, a: 255,
                           font: LOWREZ_FONT_PATH }
