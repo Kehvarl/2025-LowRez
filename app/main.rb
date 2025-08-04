@@ -125,25 +125,25 @@ def how_to_render_a_label args
   # NOTE: Text is aligned from the TOP LEFT corner
 
   # Render an EXTRA LARGE/XL label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 57, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 57, text: "Hellorld",
                          size_enum: LOWREZ_FONT_XL,
                          r: 0, g: 0, b: 0, a: 255,
                          font: LOWREZ_FONT_PATH }
 
   # Render a LARGE/LG label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 36, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 36, text: "Hellorld",
                           size_enum: LOWREZ_FONT_LG,
                           r: 0, g: 0, b: 0, a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # Render a MEDIUM/MD label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 20, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 20, text: "Hellorld",
                           size_enum: LOWREZ_FONT_MD,
                           r: 0, g: 0, b: 0, a: 255,
                           font: LOWREZ_FONT_PATH }
 
   # Render a SMALL/SM label (remove the "#" in front of each line below)
-  args.lowrez.labels << { x: 0, y: 9, text: "Hello World",
+  args.lowrez.labels << { x: 0, y: 9, text: "Hellorld",
                           size_enum: LOWREZ_FONT_SM,
                           r: 0, g: 0, b: 0, a: 255,
                           font: LOWREZ_FONT_PATH }
