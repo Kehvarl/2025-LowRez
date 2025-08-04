@@ -28,7 +28,7 @@ def tick args
   #       Scroll down to the method to see the details.
 
   # Remove the "#" at the beginning of the line below
-  # how_to_render_a_label args # <---- remove the "#" at the begging of this line to run the method
+  how_to_render_a_label args # <---- remove the "#" at the begging of this line to run the method
   # =======================================================================
 
 
@@ -58,7 +58,7 @@ def tick args
 
   # ==== HOW TO MOVE A SPRITE BASED OFF OF USER INPUT =====================
   # Remove the "#" at the beginning of the line below
-  how_to_move_a_sprite args
+  # how_to_move_a_sprite args
   # =======================================================================
 
 
@@ -87,7 +87,7 @@ def tick args
 
 
   # ==== The line below renders a debug grid, mouse information, and current tick
-  render_debug args
+  # render_debug args
 end
 
 def hello_world args
