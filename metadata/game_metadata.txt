@@ -1,6 +1,6 @@
-devid=dragonruby
-devtitle=DragonRuby LLC
-gameid=sample-app
-gametitle=Sample App
+devid=kehvarl
+devtitle=Kehvarl
+gameid=stellar-mass
+gametitle=Stellar Mass
 version=1.0
 icon=metadata/icon.png
