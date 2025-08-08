@@ -24,7 +24,8 @@ def init args
                        path: 'sprites/circle/white.png',
                        r: 255, g: 255, b: 0
                       }
-    args.state.gravity_countdown = 10
+    args.state.gravity_countdown = 5
+    args.state.score = 0
 end
 
 def tick args
@@ -33,16 +34,20 @@ def tick args
     end
     args.lowrez.background_color = [64, 64, 64]
 
-    if args.inputs.keyboard.space
+    if args.inputs.keyboard.space or args.inputs.mouse.button_left
         args.state.star.w += 0.1
         args.state.star.h += 0.1
     end
 
+    if args.tick_count % 30 == 0
+      args.state.score += 1
+    end
+
     args.state.gravity_countdown -= 1
     if args.state.gravity_countdown <= 0
-        args.state.gravity_countdown = 10
+        args.state.gravity_countdown = 5
 
-        args.state.star.w -= 0.5
+        args.state.star.w -= 0.25
         args.state.star.h = args.state.star.w
 
         c = star_color(args.state.star.w)
@@ -54,6 +59,12 @@ def tick args
     #angle: Kernel.tick_count % 360
 
     args.lowrez.sprites << args.state.star
+
+    args.lowrez.labels << { x: 0, y: 3, text: "Score: #{args.state.score}",
+                        size_enum: LOWREZ_FONT_SM,
+                        r: 0, g: 0, b: 0, a: 255,
+                        font: LOWREZ_FONT_PATH }
+
 end
 
 
