@@ -25,6 +25,7 @@ def init args
                        r: 255, g: 255, b: 0
                       }
     args.state.gravity_countdown = 5
+    args.state.game_over_countdown = 30
     args.state.score = 0
     args.state.game_state = :play
 end
@@ -47,24 +48,29 @@ def tick args
       over_tick args
     elsif args.state.game_state == :collapse
       args.lowrez.background_color = [0,0,0]
-      args.state.red = 80
+      args.state.red = 128
       over_tick args
     end
 end
 
 def over_tick args
+      args.state.game_over_countdown -=1
       args.lowrez.labels << { x: 0, y: 46, text: "GAME",
                     size_enum: LOWREZ_FONT_LG,
                     r: args.state.red, g: 0, b: 0, a: 255,
                     font: LOWREZ_FONT_PATH }
-      args.lowrez.labels << { x: 12, y: 32, text: "OVER",
+      args.lowrez.labels << { x: 10, y: 32, text: "OVER",
                     size_enum: LOWREZ_FONT_LG,
                     r: args.state.red, g: 0, b: 0, a: 255,
                     font: LOWREZ_FONT_PATH }
-      args.lowrez.labels << { x: 0, y: 8, text: "Score: #{args.state.score}",
-                    size_enum: LOWREZ_FONT_MD,
+      args.lowrez.labels << { x: 0, y: 3, text: "Score: #{args.state.score}",
+                    size_enum: LOWREZ_FONT_SM,
                     r: args.state.red, g: 0, b: 0, a: 255,
                     font: LOWREZ_FONT_PATH }
+      if args.state.game_over_countdown <= 0 and
+          (args.inputs.keyboard.space or args.inputs.mouse.button_left)
+        init args
+      end
 end
 
 def play_tick args
