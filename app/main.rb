@@ -5,8 +5,8 @@ def star_color(w)
 
   if w < 26
     t = (26 - w) / 18.0
-    g = 255 - (100 * t)
-    b = 100 + (155 * t)
+    g = 255 - (50 * t)
+    b = 55 + (200 * t)
   elsif w > 26
     t = (w - 26) / 38.0
     g = 255 - (255 * t)
@@ -21,7 +21,7 @@ end
 def init args
     args.state.star = {x: 32, y: 32, w: 20, h: 20,
                        anchor_x: 0.5, anchor_y: 0.5,
-                       path: 'sprites/circle/white.png',
+                       path: 'sprites/sun_sprite_64.png',
                        r: 255, g: 255, b: 0
                       }
     args.state.gravity_countdown = 5
