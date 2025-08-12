@@ -178,6 +178,8 @@ def play_tick args
       if args.state.show_countdown <= 0
         args.state.show_planets = true
       end
+    else
+      args.state.show_countdown = 600
     end
 
     args.lowrez.sprites << args.state.star
@@ -191,9 +193,9 @@ def play_tick args
 
 
     args.lowrez.labels << { x: 0, y: 3, text: "Score: #{args.state.score}",
-                        size_enum: LOWREZ_FONT_SM,
-                        r: 0, g: 0, b: 0, a: 255,
-                        font: LOWREZ_FONT_PATH }
+                            size_enum: LOWREZ_FONT_SM,
+                            r: 0, g: 0, b: 0, a: 255,
+                            font: LOWREZ_FONT_PATH }
 end
 
 
