@@ -44,7 +44,7 @@ def init args
     args.state.score = 0
     args.state.show_planets = false
     args.state.show_countdown = 600
-    args.state.game_state = :play
+    args.state.game_state = :splash
 end
 
 def calc_score args
@@ -69,7 +69,9 @@ def tick args
         init args
     end
 
-    if args.state.game_state == :play
+    if args.state.game_state == :splash
+      splash_tick args
+    elsif args.state.game_state == :play
       play_tick args
     elsif args.state.game_state == :explode
       args.lowrez.background_color = [255, 255, 255]
@@ -80,6 +82,25 @@ def tick args
       args.state.red = 128
       over_tick args
     end
+end
+
+def splash_tick args
+  args.lowrez.sprites << {x: 0, y: 0, w: 64, h: 64,
+                          path: 'sprites/splash.png',
+                          fade_in: 30, a: 255
+                         }
+  args.lowrez.labels << { x: 10, y: 27, text: "Click, Tap,",
+                          size_enum: LOWREZ_FONT_SM,
+                          r: 0, g: 0, b: 0, a: [255,args.tick_count].min(),
+                          font: LOWREZ_FONT_PATH }
+  args.lowrez.labels << { x: 16, y: 23, text: "or Space",
+                          size_enum: LOWREZ_FONT_SM,
+                          r: 0, g: 0, b: 0, a: [255,args.tick_count].min(),
+                          font: LOWREZ_FONT_PATH }
+
+  if args.inputs.keyboard.space or args.inputs.mouse.button_left
+    args.state.game_state = :play
+  end
 end
 
 def over_tick args
